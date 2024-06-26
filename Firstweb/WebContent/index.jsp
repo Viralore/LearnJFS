@@ -25,7 +25,9 @@
 	  
 	  <p>Add book here    : <a href="add-book.jsp">Click </a> </p>
 	  <p>Add student here : <a href="add-student.jsp">Click </a> </p>
-	  <p>All Books : <a href="all-books.jsp">Click </a> </p>
+	  
+	  <!--  <p>All Books : <a href="all-books.jsp">Click </a> </p> -->
+	  <p>All Books : <a href="showBooks">Click </a> </p>
 	  
 	  <br><br>
 	  <form action="showBooks" method="get">

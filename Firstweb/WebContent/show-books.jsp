@@ -12,26 +12,9 @@
 </head>
 <body>
 	<h2>List All Books</h2>
-	<%=request.getAttribute("allBooks") %><br><br>
-	<table border ="1" width="500"> 
-         <tr bgcolor="00FF7F"> 
-          <th><b>Book Title</b></th> 
-          <th><b>Book Author</b></th> 
-          <th><b>Book Publisher</b></th> 
-         </tr>  
-        <%ArrayList<Book> list =  
-            (ArrayList<Book>)request.getAttribute("allBooks"); 
-        for(Book b:list){%> 
-        <%-- Arranging data in tabular form 
-        --%> 
-            <tr> 
-                <td><%=b.getTitle()%></td> 
-                <td><%=b.getAuthor()%></td> 
-                <td><%=b.getPublisher()%></td> 
-            </tr> 
-            <%}%> 
-        </table>
-	
+	<%=request.getAttribute("allBooks") %><br><br>         
+ 	<br><br>
+	<a href="showBooks"><input type="button" value="Next"></a>
 	<br><br>
 	<a href="index.jsp"><input type="button" value="Back"></a>
 </body>

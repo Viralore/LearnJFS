@@ -12,6 +12,7 @@ public interface BookDAO {
 	Book find(int bid);
 	boolean remove(int bid);
 	List<Book> findAll();
+	List<Book> find(int start, int number);
 	
 
 	// select and press control /

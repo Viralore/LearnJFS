@@ -20,6 +20,7 @@ public class BookDAOImpl implements BookDAO
 		map.put(2103, new Book(2103, "Javascript", "Deitel", "UniversityPress"));
 		map.put(2104, new Book(2104, "DBMS", "Korth", "Tata McGr"));
 		map.put(2105, new Book(2105, "Java", "Herbert S", "Mcgraw Hill"));
+		map.put(2106, new Book(2105, "Servlets", "OReily", "Mcgraw Hill"));
 	}
 	@Override
 	public Book add(String title, String author, String publisher) {
@@ -71,10 +72,24 @@ public class BookDAOImpl implements BookDAO
 	}
 
 	@Override
-	public List<Book> findAll() {
+	public List<Book> findAll() 
+	{
 		Collection<Book> values = map.values();
 		List<Book> list = new ArrayList<>(values);
 		return list;
+	}
+	@Override
+	public List<Book> find(int start, int number) 
+	{
+		//currently no database so getting from map
+		
+		List<Book> list = this.findAll();
+		
+		if(start < list.size() && start+number < list.size())
+		{
+			return list.subList(start, start+number);
+		}
+		else return list.subList(list.size()-number, list.size());
 	}
 
 }
