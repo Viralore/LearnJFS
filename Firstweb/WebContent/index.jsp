@@ -30,7 +30,7 @@
 	  <p>All Books : <a href="showBooks">Click </a> </p>
 	  
 	  <br><br>
-	  <form action="showBooks" method="get">
+	  <form action="showBooks" method="post">
 	  	<input type="submit" value="Show All Books">
 	  </form>
 </body>

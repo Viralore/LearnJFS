@@ -11,6 +11,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import model.Book;
 import service.BookService;
@@ -57,7 +58,31 @@ public class ShowBook extends HttpServlet
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
-		doGet(request, response);
+		int start = 0;
+		HttpSession session = request.getSession();
+		
+		if(session.getAttribute("bookStartNumberSession") == null)
+		{
+			session.setAttribute("bookStartNumberSession", start+2);
+		}
+		else
+		{
+			Object value = session.getAttribute("bookStartNumberSession");
+			try
+			{
+				start = (int) value;
+			}
+			catch(Exception e)
+			{
+				//
+			}
+		}
+		
+		List<Book> list = bookService.find(start,2);
+		request.setAttribute("allBooks", list);
+		session.setAttribute("bookStartNumberSession", start+2);
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher("show-book-session.jsp");
+		requestDispatcher.forward(request, response);
 	}
 
 }
