@@ -6,7 +6,7 @@ import model.Student;
 
 public interface StudentDAO {
 	
-	Student add(int roll, String name, String branch, String password);
+	Student add(int roll, String name, String branch, String dob,String password);
 	Student update(int roll, Student student);
 	Student find(int roll, String password);
 	Student find(int roll);

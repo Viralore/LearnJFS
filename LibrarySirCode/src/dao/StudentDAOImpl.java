@@ -11,7 +11,7 @@ import model.Student;
 public class StudentDAOImpl implements StudentDAO
 {
 	private static Map<Integer,Student> map = new HashMap<>();//cont + shift + O
-	
+	/*
 	static 
 	{
 		map.put(101, new Student(101, "Sanjay", "CSE", "pass123"));
@@ -20,14 +20,14 @@ public class StudentDAOImpl implements StudentDAO
 		map.put(104, new Student(104, "Varun", "CSE", "pass123"));
 		map.put(105, new Student(105, "Satya", "ECE", "pass123"));
 		
-	}
+	}*/
 	@Override
-	public Student add(int roll, String name, String branch, String password) {
+	public Student add(int roll, String name, String branch, String dob ,String password) {
 		if(map.containsKey(roll))
 		{
 			throw new RuntimeException("Student already exists");
 		}
-		Student s = new Student(roll, name, branch, password);
+		Student s = new Student(roll, name, branch,dob ,password);
 		map.put(roll,  s);
 		return s;
 	}

@@ -3,19 +3,23 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Student {
+public class Student 
+{
 	private int roll;
 	private String name; 
 	private String branch;
 	private String password;
+	private String dob;
 	public int numBooks = 0;
 	private List<Issue> issues = new ArrayList<>(); //Control+shift+ O
-	public Student(int roll, String name, String branch, String password) {
+	public Student(int roll, String name, String branch, String dob,String password) 
+	{
 		super();
 		this.roll = roll;
 		this.name = name;
 		this.branch = branch;
 		this.password = password;
+		this.dob = dob;
 	}
 	@Override
 	public String toString() {
@@ -47,4 +51,14 @@ public class Student {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	public String getDob() {
+		return dob;
+	}
+	public void setDob(String dob) {
+		this.dob = dob;
+	}
+	
+	
+	
+	
 }
