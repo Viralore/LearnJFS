@@ -12,7 +12,17 @@
 </head>
 <body>
 	<h2>List All Books</h2>
-	<%=request.getAttribute("allBooks") %><br><br>         
+	<% List<Book> list = (List<Book>)request.getAttribute("allBooks"); %>      
+	
+	<ol>
+		<% 
+			for(Book b : list)
+			{
+				out.println("<li>" + b + "</li>");
+			}
+		%>
+	</ol>
+	  
  	<br><br>
 	<a href="showBooks"><input type="button" value="Next"></a>
 	<br><br>
