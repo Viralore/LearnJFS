@@ -1,5 +1,6 @@
 package service;
 
+import java.sql.Date;
 import java.util.List;
 
 import dao.StudentDAO;
@@ -11,8 +12,8 @@ public class StudentServiceImpl implements StudentService{
 	StudentDAO studentDao = new StudentDAOImpl(); //StudentService is dependent on StudentDAO, . , . 
 
 	@Override
-	public Student add(int roll, String name, String branch, String password) {
-		return studentDao.add(roll, name, branch, password);
+	public Student add(int roll, String name, String branch,Date dob ,String password) {
+		return studentDao.add(roll, name, branch,dob, password);
 	}
 
 	@Override

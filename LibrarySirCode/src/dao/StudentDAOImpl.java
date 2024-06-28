@@ -1,5 +1,6 @@
 package dao;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -22,7 +23,7 @@ public class StudentDAOImpl implements StudentDAO
 		
 	}*/
 	@Override
-	public Student add(int roll, String name, String branch, String dob ,String password) {
+	public Student add(int roll, String name, String branch, Date dob ,String password) {
 		if(map.containsKey(roll))
 		{
 			throw new RuntimeException("Student already exists");

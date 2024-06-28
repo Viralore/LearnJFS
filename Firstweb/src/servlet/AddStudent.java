@@ -2,6 +2,7 @@ package servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -39,8 +40,9 @@ public class AddStudent extends HttpServlet
 		String roll = request.getParameter("roll");
 		String branch = request.getParameter("branch");
 		String password = request.getParameter("password");
-		
-		studentService.add(Integer.parseInt(roll), name, branch, password);
+		String dobStr = request.getParameter("dob");
+		Date dob = Date.valueOf(dobStr);
+		studentService.add(Integer.parseInt(roll), name, branch,dob ,password);
 		PrintWriter writer = response.getWriter();
 		writer.append("Student added");
 	}

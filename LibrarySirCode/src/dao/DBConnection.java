@@ -13,7 +13,7 @@ public class DBConnection
 			if(connection == null || connection.isClosed())
 			{
 				Class.forName("com.mysql.cj.jdbc.Driver");
-				connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/lpu2024","root","password");
+				connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/lpu2024","root","Frosty4#1");
 				return connection;
 			}
 			else return connection;
