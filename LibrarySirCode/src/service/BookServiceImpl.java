@@ -3,12 +3,12 @@ package service;
 import java.util.List;
 
 import dao.BookDAO;
-import dao.BookDAOImpl;
+import dao.BookDAOImplDB;
 import model.Book;
 
 public class BookServiceImpl implements BookService{
 	
-	BookDAO bookDao = new BookDAOImpl(); //BookService is dependent on BookDAO, . . . 
+	BookDAO bookDao = new BookDAOImplDB(); //BookService is dependent on BookDAO, . . . 
 
 	@Override
 	public Book add(String title, String author, String publisher) {

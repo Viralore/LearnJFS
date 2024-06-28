@@ -19,5 +19,9 @@
 			}
 		%>
 	</ol>
+	
+	<br><br>
+
+	<a href="index.jsp"><input type="button" value="Back"></a>
 </body>
 </html>
