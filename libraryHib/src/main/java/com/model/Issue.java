@@ -2,15 +2,27 @@ package com.model;
 
 import java.time.LocalDate;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Issue 
 {
+	@Id
 	private int isid;
 	private int bid;
+	@Column(name = "roll")
 	private int sid;
 	private LocalDate isDate, expRetDate, actRetDate;
 	
 	private int fine = 0;
 	
+	
+	
+	public Issue() {
+		super();
+	}
 	public Issue(int bid, int sid) {
 		super();
 		this.bid = bid;

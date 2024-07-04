@@ -4,7 +4,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import com.model.Student;
+import com.model.Issue;
 
 public class Main 
 {
@@ -23,12 +23,23 @@ public class Main
 //			System.out.println(book);
 //		}
 		
+		//For Student
+//		try
+//		{
+//			emf = Persistence.createEntityManagerFactory("libPU");
+//			em = emf.createEntityManager();
+//			Student student = em.find(Student.class, 2408);
+//			System.out.println(student);
+//		}
+		
+		//For Issue
+		//Cannot be null -> issue.fine
 		try
 		{
 			emf = Persistence.createEntityManagerFactory("libPU");
 			em = emf.createEntityManager();
-			Student student = em.find(Student.class, 2408);
-			System.out.println(student);
+			Issue issue = em.find(Issue.class, 101);
+			System.out.println(issue);
 		}
 		catch(Exception e)
 		{
