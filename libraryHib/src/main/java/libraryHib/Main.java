@@ -67,11 +67,12 @@ public class Main
 //			em.getTransaction().commit();
 //			System.out.println(newBook);
 			
-			//deleting a book
-			em.getTransaction().begin();
-			Book delBook = em.find(Book.class, 13);
-			em.remove(delBook);
-			em.getTransaction().commit();
+			//deleting a book -> performed
+			//commenting these because they are already commited in database no need to call them every time
+//			em.getTransaction().begin();
+//			Book delBook = em.find(Book.class, 13);
+//			em.remove(delBook);
+//			em.getTransaction().commit();
 			
 			
 		}
