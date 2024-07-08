@@ -14,7 +14,21 @@
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL57Dialect" />    
             <property name="hibernate.show_sql" value="true" /> 
             <property name="hibernate.hbm2ddl.auto" value="update" /> 
-               
+        </properties>
+    </persistence-unit>
+    
+    <persistence-unit name="libPUPractice" transaction-type="RESOURCE_LOCAL">
+    <class>com.model.Employee</class>
+    <class>com.model.Department</class>
+    <class>com.model.Parking</class>
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/practice" />
+            <property name="javax.persistence.jdbc.user" value="root" />
+            <property name="javax.persistence.jdbc.password" value="Frosty4#1" />
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL57Dialect" />    
+            <property name="hibernate.show_sql" value="true" /> 
+            <property name="hibernate.hbm2ddl.auto" value="update" /> 
         </properties>
     </persistence-unit>
 </persistence>
