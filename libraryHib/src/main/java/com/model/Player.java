@@ -1,11 +1,15 @@
 package com.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
@@ -30,6 +34,10 @@ public class Player
 	@JoinColumn(name = "playingkitid")
 	PlayingKit playingKit;
 
+	
+	@ManyToMany
+	List<MatchDetails> matches = new ArrayList<>();
+	
 	public int getPlayerId() 
 	{
 		return playerId;
@@ -76,4 +84,14 @@ public class Player
 		return "Player [playerId=" + playerId + ", playerName=" + playerName + ", team=" + team + ", playingKit="
 				+ playingKit + "]";
 	}
+
+	public List<MatchDetails> getMatches() {
+		return matches;
+	}
+
+	public void setMatches(List<MatchDetails> matches) {
+		this.matches = matches;
+	}
+	
+	
 }
