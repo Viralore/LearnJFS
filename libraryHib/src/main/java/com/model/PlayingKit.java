@@ -13,6 +13,9 @@ public class PlayingKit
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	@Column(name ="playingkitid")
 	private int playingKitId;
+	
+	//Integer numBats; // it can be null in DB
+	//int numBats; //it cannot be null in DB primitive datatypes cannot be null
 
 	public int getPlayingKitId() 
 	{

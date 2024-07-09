@@ -1,8 +1,12 @@
 package com.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
@@ -21,6 +25,11 @@ public class Employee
 	@ManyToOne
 	@JoinColumn(name ="depid")
 	Department department;
+	
+	
+	//Assumption by hibernate there is a table Employee_project with employee_empid and projects_projid as foreign keys
+	@ManyToMany
+	List<Project> projects = new ArrayList<>();
 	
 	public int getEmpid() 
 	{
@@ -67,6 +76,14 @@ public class Employee
 	{
 		return "Employee [empid=" + empid + ", name=" + name + ", parking=" + parking + ", department=" + department
 				+ "]";
+	}
+
+	public List<Project> getProjects() {
+		return projects;
+	}
+
+	public void setProjects(List<Project> projects) {
+		this.projects = projects;
 	}
 	
 	
