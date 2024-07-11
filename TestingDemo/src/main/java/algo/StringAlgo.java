@@ -21,33 +21,40 @@ public class StringAlgo
 	public String shiftBy2Chars(String str)
 	{
 		//My logic
-		int length = str.length();
-		if(length <= 0) throw new RuntimeException();
-		char[] charArray = str.toCharArray();
+//		int length = str.length();
+//		if(length <= 0) throw new RuntimeException();
+//		char[] charArray = str.toCharArray();
+//		
+//		for(int i=0;i<2;i++)
+//		{
+//			char temp = charArray[0];
+//			for(int j=0;j<length-1;j++)
+//			{
+//				charArray[j] = charArray[j+1];
+//			}
+//			charArray[length-1] = temp;
+//		}
+//		String string = String.valueOf(charArray);
+//		return string;
 		
-		for(int i=0;i<2;i++)
-		{
-			char temp = charArray[0];
-			for(int j=0;j<length-1;j++)
-			{
-				charArray[j] = charArray[j+1];
-			}
-			charArray[length-1] = temp;
-		}
-		String string = String.valueOf(charArray);
-		return string;
+		
 		//Sir's logic
-		/*
-		 * String start2 = str.substring(0,2);
-		 * String end = str.substring(2);
-		 * String ans = end + start2;
-		 * return ans;
-		 */
-	}
-	
-	public static void main(String[] args) 
-	{
-		StringAlgo test = new StringAlgo();
-		System.out.println(test.shiftBy2Chars("a"));
+		
+		// for test2
+		// checking timeout if it fails
+		try
+		{
+			Thread.sleep(3000);
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		
+		String start2 = str.substring(0,2);
+		String end = str.substring(2);
+		String ans = end + start2;
+		return ans;
+		 
 	}
 }
