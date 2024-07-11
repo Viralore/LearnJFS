@@ -1,0 +1,5 @@
+2024-07-11 15:15:37,491[yyyy-mm-dd HH-MM-SS] ERROR the exception with values occured
+ 2024-07-11 15:15:37,491[yyyy-mm-dd HH-MM-SS] FATAL Sorry please restart the software/system
+ 2024-07-11 15:15:52,247[yyyy-mm-dd HH-MM-SS] ERROR the exception with values occured
+ 2024-07-11 15:15:52,247[yyyy-mm-dd HH-MM-SS] FATAL Sorry please restart the software/system
+ 
