@@ -1,0 +1,13 @@
+2024-07-11 15:32:17,686[yyyy-mm-dd HH-MM-SS] DEBUG  Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2024-07-11 15:32:17,779[yyyy-mm-dd HH-MM-SS] INFO   HHH000204: Processing PersistenceUnitInfo [name: libPUPractice]
+2024-07-11 15:32:17,883[yyyy-mm-dd HH-MM-SS] INFO   HHH000412: Hibernate ORM core version 5.6.15.Final
+2024-07-11 15:32:18,072[yyyy-mm-dd HH-MM-SS] INFO   HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2024-07-11 15:32:18,382[yyyy-mm-dd HH-MM-SS] WARN   HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2024-07-11 15:32:18,389[yyyy-mm-dd HH-MM-SS] INFO   HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/practice]
+2024-07-11 15:32:18,389[yyyy-mm-dd HH-MM-SS] INFO   HHH10001001: Connection properties: {user=root, password=****}
+2024-07-11 15:32:18,389[yyyy-mm-dd HH-MM-SS] INFO   HHH10001003: Autocommit mode: false
+2024-07-11 15:32:18,392[yyyy-mm-dd HH-MM-SS] INFO   HHH000115: Hibernate connection pool size: 20 (min=1)
+2024-07-11 15:32:18,891[yyyy-mm-dd HH-MM-SS] INFO   HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2024-07-11 15:32:19,564[yyyy-mm-dd HH-MM-SS] INFO   HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@18eec010] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-07-11 15:32:19,708[yyyy-mm-dd HH-MM-SS] INFO   HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-07-11 15:32:19,866[yyyy-mm-dd HH-MM-SS] INFO   HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/practice]
