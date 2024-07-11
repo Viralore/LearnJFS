@@ -85,10 +85,10 @@ public class StringAlgoTest
 			else 
 			{
 				fail("Exception is not type of StringOutOfBoundsException");
-				return;
 			}
+			return;
 		}
-		//fail("No exception thrown");
+		fail("No exception thrown");
 		
 	}
 
