@@ -6,19 +6,20 @@
 </head>
 <body>
 	<h1>Library Using Spring Boot</h1>
-	<button onclick="fun()">Show Books</button>
+	<button onclick="showBooks()">Show Books</button>
+	<button onclick="showStudents()">Show Students</button>
 	
-	<ol id="books">
+	<ol id="books-students">
 		
 	</ol>
 	
 	<script>
-		function fun()
+		function showBooks()
 		{
 			console.log("test");
 			fetch("/books").then(res => res.json())
 			.then(books => {
-				let listEl = document.getElementById("books");
+				let listEl = document.getElementById("books-students");
 				let str = "";
 				for(let book of books)
 				{
@@ -26,7 +27,21 @@
 				}
 				listEl.innerHTML = str;
 			})
-			
+		}
+		
+		function showStudents()
+		{
+			console.log("test");
+			fetch("/students").then(res => res.json())
+			.then(students => {
+				let listEl = document.getElementById("books-students");
+				let str = "";
+				for(let student of students)
+				{
+					str += "<li>" + JSON.stringify(student) + "</li>";
+				}
+				listEl.innerHTML = str;
+			})
 		}
 	</script>
 </body>
