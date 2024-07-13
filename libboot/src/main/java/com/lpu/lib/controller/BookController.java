@@ -2,7 +2,10 @@ package com.lpu.lib.controller;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -44,6 +47,22 @@ public class BookController
 		Book bk = bookService.saveBook(book);
 		System.out.println("Book saved : " + bk);
 		return bk;
+	}
+	
+	@Transactional
+	@DeleteMapping(value = "/book/{bid}", produces = "application/json")
+	public Book deleteBook(@PathVariable("bid") int bid)
+	{
+		Book bk = bookService.find(bid);
+		if(bk==null)
+		{
+			throw new RuntimeException("No book with book id : "+bid+" is present");
+		}
+		else
+		{
+			bookService.remove(bid);
+			return bk;
+		}
 	}
 	
 }

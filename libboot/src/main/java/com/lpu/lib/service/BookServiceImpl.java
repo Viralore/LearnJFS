@@ -58,7 +58,12 @@ public class BookServiceImpl implements BookService
 	@Override
 	public boolean remove(int bid) 
 	{
-		// TODO Auto-generated method stub
+		Optional<Book> book = bookRepository.findById(bid);
+		if(book.isPresent())
+		{
+			bookRepository.delete(book.get());
+			return true;
+		}
 		return false;
 	}
 
