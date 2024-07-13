@@ -65,14 +65,13 @@ public class BookServiceImpl implements BookService
 	@Override
 	public List<Book> findAll() 
 	{
-		// TODO Auto-generated method stub
-		return null;
+		return bookRepository.findAll();
 	}
 
 	@Override
 	public List<Book> find(int start, int number) 
 	{
-		return bookRepository.findAll();
+		return null;
 	}
 
 }
