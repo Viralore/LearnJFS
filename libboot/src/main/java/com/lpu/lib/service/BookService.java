@@ -13,4 +13,5 @@ public interface BookService
 	boolean remove(int bid);
 	List<Book> findAll();
 	List<Book> find(int start,int number);
+	Book saveBook(Book book);
 }

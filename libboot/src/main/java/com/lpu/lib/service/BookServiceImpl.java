@@ -74,4 +74,12 @@ public class BookServiceImpl implements BookService
 		return null;
 	}
 
+	@Override
+	public Book saveBook(Book book) 
+	{
+		return this.add(book.getTitle(), book.getAuthor(), book.getPublisher());
+	}
+	
+	
+
 }
