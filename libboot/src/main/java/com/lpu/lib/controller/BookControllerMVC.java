@@ -1,10 +1,14 @@
 package com.lpu.lib.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.lpu.lib.model.Book;
 import com.lpu.lib.service.BookService;
@@ -17,7 +21,7 @@ public class BookControllerMVC
 	BookService bookService;
 	
 	
-	@GetMapping(value="/mvc/books")
+	@GetMapping(value="/mvc-books")
 	public String getBook(@RequestParam("bid") int bid, ModelMap model)
 	{
 		//get a model from service and pass it to the view (jsp)

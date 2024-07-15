@@ -10,10 +10,16 @@
 
 <h2>Index.jsp file in webapp</h2>
 
-<% 
-	for(int i=1;i<=5;i++)
-		out.println("<h4>"+i+"</h4>");
-%>
+	<form action="/mvc-books" method="get">
+		Book bid : <input type="number"  name="bid">
+	  	<input type="submit" value="Show Book">
+	</form>
+	<br><br>
+	
+	<form action="/mvc-students" method="get">
+		Student ID : <input type="number"  name="sid">
+	  	<input type="submit" value="Show Student">
+	</form>
 
 </body>
 </html>

@@ -8,16 +8,17 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.lpu.lib.model.Student;
 import com.lpu.lib.repo.StudentRepository;
+import com.lpu.lib.service.StudentService;
 
 @RestController
 public class StudentController 
 {
 	@Autowired
-	StudentRepository studentRepository;
+	StudentService studentService;
 	
 	@GetMapping(value = "/students", produces = "application/json")
 	List<Student> getStudents()
 	{
-		return studentRepository.findAll();
+		return studentService.findAll();
 	}
 }
