@@ -8,6 +8,12 @@
 </head>
 <body>
 	<div>Student received from model (sent by controller)</div>
+	<br><br>
 	<div>${student}</div>
+	<br>
+	<div>
+		<p>Active Issues</p>
+		${activeIssues}
+	</div>
 </body>
 </html>
