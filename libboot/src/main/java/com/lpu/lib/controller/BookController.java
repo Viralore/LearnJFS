@@ -5,7 +5,10 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.lpu.lib.model.Book;
+import com.lpu.lib.service.BookNotFoundException;
 import com.lpu.lib.service.BookService;
 
 @RestController
@@ -37,8 +41,9 @@ public class BookController
 	}
 	
 	@GetMapping(value = "/book/{bid}", produces = "application/json")
-	public Book getBook(@PathVariable("bid") int bid)
+	public Book getBook(@PathVariable("bid") int bid) throws BookNotFoundException
 	{
+		//Method 2
 		return bookService.find(bid);
 	}
 	
@@ -52,7 +57,7 @@ public class BookController
 	
 	@Transactional
 	@DeleteMapping(value = "/book/{bid}", produces = "application/json")
-	public Book deleteBook(@PathVariable("bid") int bid)
+	public Book deleteBook(@PathVariable("bid") int bid) throws BookNotFoundException
 	{
 		Book bk = bookService.find(bid);
 		if(bk==null)
@@ -67,10 +72,26 @@ public class BookController
 	}
 	
 	@PutMapping(value = "/books/", consumes = "application/json", produces = "application/json")
-	public Book updateBook(@RequestBody Book book)
+	public ResponseEntity updateBook(@RequestBody Book book)
 	{
-		Book updatedBook = bookService.update(book.getBid(), book);
-		return updatedBook;
+		//Method 1
+		try
+		{
+			Book updatedBook = bookService.update(book.getBid(), book);
+			return ResponseEntity.status(HttpStatus.OK).body(updatedBook);
+//			return updatedBook;
+		}
+		catch(RuntimeException e)
+		{
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Some Error : "+ e.getMessage());
+		}
+//		return null;
 	}
 	
+	@ExceptionHandler
+	public ResponseEntity sendErrorMessage(BookNotFoundException e)
+	{
+		String message = e.getMessage();
+		return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Handler says No Book : "+message);
+	}
 }

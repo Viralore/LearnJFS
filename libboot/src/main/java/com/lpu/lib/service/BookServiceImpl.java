@@ -59,11 +59,11 @@ public class BookServiceImpl implements BookService
 	}
 
 	@Override
-	public Book find(int bid) 
+	public Book find(int bid) throws BookNotFoundException
 	{
 		Optional<Book> opt = bookRepository.findById(bid);
 		if(opt.isPresent()) return opt.get();
-		else return null;
+		else throw new BookNotFoundException(bid);
 	}
 
 	@Override
