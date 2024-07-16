@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Issue 
 {
@@ -27,6 +29,7 @@ public class Issue
 	
 	@OneToOne
 	@JoinColumn(name = "bid")
+	@JsonIgnore //do not convert this to json
 	Book book;
 	
 	@OneToOne

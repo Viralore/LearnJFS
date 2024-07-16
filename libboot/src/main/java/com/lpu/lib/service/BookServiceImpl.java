@@ -34,10 +34,21 @@ public class BookServiceImpl implements BookService
 	}
 
 	@Override
+	@Transactional	//automatically save all the data 
 	public Book update(int bid, Book book) 
 	{
-		// TODO Auto-generated method stub
-		return null;
+		Optional<Book> obj = bookRepository.findById(bid);
+		if(obj.isPresent())
+		{
+			Book ex = obj.get();
+			ex.setAuthor(book.getAuthor());
+			ex.setTitle(book.getTitle());
+			ex.setBookTypeid(book.getBookTypeid());
+			ex.setIssue(book.getIssue());
+			ex.setPublisher(book.getPublisher());
+			return ex;
+		}
+		throw new RuntimeException("NO Book found with id : "+bid);
 	}
 
 	@Override
